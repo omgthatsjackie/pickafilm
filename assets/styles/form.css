@@ -1,0 +1,592 @@
+@font-face {
+  font-weight: 900;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Black.woff") format("woff"), url("../fonts/SFProDisplay-Black.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 900;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-BlackItalic.woff") format("woff"), url("../fonts/SFProDisplay-BlackItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Bold.woff") format("woff"), url("../fonts/SFProDisplay-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-BoldItalic.woff") format("woff"), url("../fonts/SFProDisplay-BoldItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 800;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Heavy.woff") format("woff"), url("../fonts/SFProDisplay-Heavy.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 800;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-HeavyItalic.woff") format("woff"), url("../fonts/SFProDisplay-HeavyItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Medium.woff") format("woff"), url("../fonts/SFProDisplay-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-MediumItalic.woff") format("woff"), url("../fonts/SFProDisplay-MediumItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Regular.woff") format("woff"), url("../fonts/SFProDisplay-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-RegularItalic.woff") format("woff"), url("../fonts/SFProDisplay-RegularItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Semibold.woff") format("woff"), url("../fonts/SFProDisplay-Semibold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-SemiboldItalic.woff") format("woff"), url("../fonts/SFProDisplay-SemiboldItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 300;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Light.woff") format("woff"), url("../fonts/SFProDisplay-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 300;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-LightItalic.woff") format("woff"), url("../fonts/SFProDisplay-LightItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 200;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Thin.woff") format("woff"), url("../fonts/SFProDisplay-Thin.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 200;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-ThinItalic.woff") format("woff"), url("../fonts/SFProDisplay-ThinItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 100;
+  font-family: "SFProDisplay";
+  font-style: normal;
+  src: url("../fonts/SFProDisplay-Ultralight.woff") format("woff"), url("../fonts/SFProDisplay-Ultralight.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 100;
+  font-family: "SFProDisplay";
+  font-style: italic;
+  src: url("../fonts/SFProDisplay-UltralightItalic.woff") format("woff"), url("../fonts/SFProDisplay-UltralightItalic.woff2") format("woff2");
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+body {
+  min-height: 100%;
+  font-family: "SFProDisplay";
+  line-height: 1;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-decoration-skip: objects;
+  text-decoration-skip: objects;
+  text-rendering: optimizeSpeed;
+}
+
+.container {
+  display: block;
+  max-width: 1400px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.spriteIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.img-wrap {
+  position: relative;
+  padding-bottom: 60%;
+  overflow: hidden;
+}
+
+.img-cover,
+.img-contain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.img-contain {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+audio,
+video {
+  display: block;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-size: inherit;
+  font-family: monospace;
+}
+
+iframe {
+  border: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #7656d2;
+}
+
+::selection {
+  color: #fff;
+  background-color: #7656d2;
+}
+
+[hidden] {
+  display: none;
+}
+
+:disabled,
+.disabled {
+  cursor: not-allowed;
+}
+
+.auth {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.auth__wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #efefef;
+  border-radius: 40px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+}
+
+.auth__forms {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  transform: translateX(-100%);
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  padding: 40px 30px;
+}
+
+.reg-form {
+  order: 2;
+}
+
+.tabs-auth {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tabs-auth__tab {
+  width: 50%;
+  padding: 20px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.tabs-auth__tab:hover {
+  color: #fff;
+  background: #7656d2;
+}
+
+.tabs-auth__tab.active {
+  color: #000;
+  background: #efefef;
+}
+
+.tabs-auth__text {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
+
+.form__eye {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  transform: translate(-15px, -50%);
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  fill: #a5a5a5;
+}
+
+.form__eye:hover {
+  fill: #7656d2;
+}
+
+.form__eye.active {
+  fill: #7656d2;
+}
+
+.form__field {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.form__field:first-child {
+  margin-top: 0;
+}
+
+.form__error {
+  position: absolute;
+  bottom: 0;
+  color: #f14857;
+  font-weight: 600;
+  transform: translateY(120%);
+}
+
+.form__input {
+  width: 100%;
+  padding: 18px 15px;
+  color: #807f7f;
+  font-weight: 600;
+  font-size: 20px;
+  background: #dfdfdf;
+  border-width: 0;
+  border-radius: 10px;
+}
+
+.form__input.error {
+  border: 1px solid #f14857;
+}
+
+.form__input:first-child {
+  margin-top: 0;
+}
+
+.form__submit {
+  width: 100%;
+  padding: 18px 20px;
+  color: #fff;
+  font-size: 28px;
+  background: #7656d2;
+  border-width: 0;
+  border-radius: 20px;
+}
+
+.password-checker {
+  position: relative;
+  margin-top: 40px;
+}
+
+.password-checker__line {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.password-checker__text {
+  display: none;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease 0s;
+}
+
+.password-checker__text.weak {
+  display: block;
+  color: #f14857;
+}
+
+.password-checker__text.middle {
+  display: block;
+  color: #f28b41;
+}
+
+.password-checker__text.strong {
+  display: block;
+  color: #42b12f;
+}
+
+.password-checker__mask {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: #dfdfdf;
+  transform: translate(-100%, -50%);
+  transition: all 0.3s ease 0s;
+}
+
+.password-checker__active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #72b73c 10.42%, #f14857 88.02%);
+  transition: all 0.3s ease 0s;
+}
+
+.purple-btn {
+  margin-top: 40px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.purple-btn:hover {
+  color: #000;
+  background: #fff;
+}
+
+.navbar {
+  padding: 50px 20px;
+}
+
+.navbar__container {
+  display: flex;
+}
+
+.navbar .logo {
+  transition: all 0.3s ease 0s;
+}
+
+.navbar .logo:hover {
+  fill: #7656d2;
+}
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: start;
+  justify-content: center;
+  padding: 30px;
+  padding-top: 70px;
+}
+
+@media (max-width: 1200px) {
+  .navbar__container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .auth__wrapper {
+    margin: 0 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth__wrapper {
+    margin: 0 !important;
+  }
+
+  .auth__form {
+    padding: 30px 20px;
+  }
+
+  .tabs-auth__text {
+    font-size: 20px;
+  }
+
+  .form__eye {
+    width: 25px;
+    height: 25px;
+  }
+
+  .form__field {
+    margin-top: 30px;
+  }
+
+  .form__input {
+    padding: 15px 7px;
+    font-size: 17px;
+  }
+
+  .form__submit {
+    font-size: 20px;
+  }
+
+  .password-checker {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+/*# sourceMappingURL=form.css.map */

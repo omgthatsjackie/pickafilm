@@ -1,0 +1,357 @@
+@font-face {
+  font-family: "SF Pro Display", sans-serif;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"),
+    url("../fonts/SFProDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro Display", sans-serif;
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"),
+    url("../fonts/SFProDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Pro Display", sans-serif;
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"),
+    url("../fonts/SFProDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #000;
+  --bg-color: #fff;
+  --card-color: #f5f5f5;
+  --shadow-color: #0000001a;
+  --caret-color: #000;
+  --icon-color: #807f7f;
+  --hover-color: #e2e2e2;
+  --menu-color: #f5f5f5;
+  --stroke-color: #e3e3e3;
+}
+
+body {
+  position: relative;
+  font-family: "SF Pro Display", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.dark-theme {
+  --text-color: #fff;
+  --bg-color: #181818;
+  --card-color: #222222;
+  --shadow-color: #00000050;
+  --caret-color: #fff;
+  --icon-color: #fff;
+  --hover-color: #2f2f2f;
+  --menu-color: #222222;
+  --stroke-color: #2e2e2e;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section-outer {
+  padding: 0 25px;
+}
+
+.content {
+  align-self: center;
+  width: 1100px;
+}
+
+.content .title {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+
+.content .search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+
+.content .search input {
+  width: 500px;
+  border: none;
+  outline: none;
+  background-color: var(--card-color);
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: 0.3s;
+  caret-color: var(--caret-color);
+  color: var(--text-color);
+}
+
+.content .search input::placeholder {
+  color: #a5a5a5;
+}
+
+.content .shown {
+  display: block;
+  font-size: 25px;
+  text-align: center;
+}
+
+.content .cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.content .cards .card {
+  display: flex;
+  flex-basis: 49%;
+  background-color: var(--card-color);
+  padding: 30px;
+  border-radius: 50px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.content .cards .card:hover,
+.content .cards .card:focus-visible {
+  box-shadow: 0 25px 50px 0 var(--shadow-color);
+  transform: translateY(-5px);
+}
+
+.content .cards .card .poster {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 30px;
+}
+
+.content .cards .card .poster img {
+  width: 100%;
+}
+
+.content .cards .card .title {
+  margin: 0;
+  font-size: 25px;
+  max-width: 300px;
+  text-align: initial;
+}
+
+.content .cards .card .film-labels {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  max-width: 323px;
+}
+
+.content .cards .card .film-labels .certification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  height: 25px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #f14857;
+}
+
+.content .cards .card .film-labels .release-year {
+  color: #a5a5a5;
+  font-weight: 600;
+}
+
+.content .cards .card .film-labels .item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.content .cards .card .rating {
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.theme-toggler {
+  position: fixed;
+  top: 90%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--card-color);
+  border-radius: 50%;
+  box-shadow: 0 0 50px 25px var(--shadow-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-toggler svg path {
+  fill: var(--icon-color);
+  transition: 0.3s;
+}
+
+.theme-toggler:hover svg path {
+  fill: #7656d2;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    width: 950px;
+  }
+  .content .title {
+    font-size: 40px;
+  }
+  .content .search {
+    font-size: 23px;
+  }
+  .content .search input {
+    padding: 10px 20px;
+    width: 450px;
+  }
+  .content .cards .card .title {
+    font-size: 23px;
+  }
+  .content .cards .card .film-labels .genres {
+    max-width: 150px;
+    word-wrap: break-word;
+  }
+  .content .cards .card .poster {
+    width: 90px;
+    height: 135px;
+    margin-right: 20px;
+  }
+  .content .cards .card .rating {
+    font-size: 40px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    width: 850px;
+  }
+  .content .cards .card {
+    padding: 25px;
+  }
+  .content .cards .card .title {
+    max-width: 250px;
+  }
+  .content .cards .card .film-labels .genres {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 870px) {
+  .content {
+    width: 600px;
+  }
+  .content .search {
+    font-size: 20px;
+  }
+  .content .search input {
+    width: 400px;
+  }
+  .content .cards {
+    justify-content: center;
+  }
+  .content .cards .card {
+    flex-basis: 70%;
+  }
+  .content .cards .card .title {
+    max-width: 250px;
+  }
+  .content .cards .card .film-labels .genres {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    max-width: 350px;
+  }
+  .content .shown {
+    font-size: 20px;
+  }
+  .content .title {
+    font-size: 30px;
+  }
+  .content .search {
+    font-size: 20px;
+  }
+  .content .search input {
+    width: 300px;
+  }
+  .content .cards .card .title {
+    max-width: 200px;
+  }
+  .content .cards .card .film-labels .genres {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 460px) {
+  .content {
+    max-width: 320px;
+  }
+  .content .title {
+    font-size: 25px;
+  }
+  .content .search {
+    font-size: 18px;
+  }
+  .content .search input {
+    width: 300px;
+  }
+  .content .cards .card .title {
+    font-size: 20px;
+    max-width: 120px;
+  }
+  .content .cards .card .film-labels .genres {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .content {
+    max-width: 300px;
+  }
+  .content .search {
+    font-size: 18px;
+  }
+  .content .search input {
+    width: 250px;
+  }
+  .content .cards .card .title {
+    font-size: 18px;
+    max-width: 130px;
+  }
+  .content .cards .card .film-labels .genres {
+    display: none;
+  }
+}
