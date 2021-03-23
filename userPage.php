@@ -8,31 +8,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<meta charset="UTF-8" />
-	
-		<!-- meta tags -->
-		<meta http-equiv="x-ua-compatible" content="ie=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="robots" content="index, follow" />
-		<meta name="google" content="notranslate" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta name="description" content="'Pickafilm' -  это веб-сайт, на котором вы можете найти фильмы и сериалы и сохранить их в свою коллекцию.">
-	
-		<!-- favicon -->
-		<link rel="shortcut icon" href="./assets/static/favicon.ico" type="image/x-icon" />
-		<link rel="icon" href="assets/static/favicon-16x16.png" type="image/png" />
-		<link rel="icon" href="assets/static/favicon-32x32.png" type="image/png" />
-		<link rel="icon" href="assets/static/favicon-192x192.png" type="image/png" />
-		<link rel="icon" href="assets/static/favicon-512x512.png" type="image/png" />
-		<link rel="apple-touch-icon" href="assets/static/apple-touch-icon.png" type="image/png">
-		<link rel="manifest" href="assets/static/site.webmanifest" />
-		
-		<!-- title -->
-		<title>Ваш профиль</title>
-	
-		<!-- styles -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Pickafilm - это веб-приложение, на котором вы можете найти фильмы и сериалы и сохранить их в свою коллекцию.">
+    <link rel="shortcut icon" href="assets/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/static/favicon-16x16.png" type="image/png">
+    <link rel="icon" href="assets/static/favicon-32x32.png" type="image/png">
+    <link rel="icon" href="assets/static/favicon-192x192.png" type="image/png">
+    <link rel="icon" href="assets/static/favicon-512x512.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/static/apple-touch-icon.png" type="image/png">
+    <link rel="manifest" href="assets/static/site.webmanifest">
+		<title>Ваш профиль / Pickafilm</title>
 		<link rel="stylesheet" href="assets/styles/userPage.css" />
-        <link rel="stylesheet" href="assets/views/navbar_hlebushek/assets/styles/test.css">
+    <link rel="stylesheet" href="assets/views/navbar_hlebushek/assets/styles/test.css">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -131,8 +123,7 @@
 				</div>
 			</main>
 		</div>
-
-		<!-- scripts -->
-		<script src="./assets/scripts/userPage.js"></script>
+    
+		<script src="assets/scripts/userPage.js"></script>
 	</body>
 </html>
