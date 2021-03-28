@@ -1,9 +1,6 @@
-<head>
-	<link rel="stylesheet" href="assets/styles/test.css">
-</head>
-<header class="navbar">
+<header class="navbar <?php if(!isset($_SESSION['user'])) echo 'nav-unreg' ?>">
 	<div class="navbar__content container">
-		<svg class="navbar__logo" width="258" height="36" viewBox="0 0 258 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg class="navbar__logo" width="200" height="28" viewBox="0 0 258 36" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
 				fill-rule="evenodd"
 				clip-rule="evenodd"

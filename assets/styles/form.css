@@ -514,14 +514,6 @@ select {
   display: flex;
 }
 
-.navbar .logo {
-  transition: all 0.3s ease 0s;
-}
-
-.navbar .logo:hover {
-  fill: #7656d2;
-}
-
 .wrapper {
   min-height: 100vh;
 }

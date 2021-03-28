@@ -38,7 +38,7 @@
 	
 		<!-- styles -->
 		<link rel="stylesheet" href="assets/styles/filmPage.css" />
-        <link rel="stylesheet" href="assets/views/navbar_hlebushek/assets/styles/test.css">
+		<link rel="stylesheet" href="./assets/views/navbar_hlebushek/assets/styles/test.css">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -155,5 +155,6 @@
 
 		<!-- scripts -->
 		<script src="./assets/scripts/filmPage.js"></script>
+		<script src="./assets/views/navbar_hlebushek/assets/scripts/test.js"></script>
 	</body>
 </html>
