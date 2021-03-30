@@ -800,7 +800,8 @@ select {
   }
 
   .column2__title {
-    text-align: center;
+		text-align: center;
+		font-size: 50px;
   }
 
   .inf {
@@ -890,7 +891,7 @@ select {
   }
 
   .column2__title {
-    font-size: 50px;
+    font-size: 35px;
   }
 
   .inf__date,
