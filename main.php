@@ -3,15 +3,25 @@
 ?>
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pickafilm</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="assets/styles/main.css">
-
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Pickafilm - это веб-приложение, на котором вы можете найти фильмы и сериалы и сохранить их в свою коллекцию.">
+    <link rel="shortcut icon" href="assets/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/static/favicon-16x16.png" type="image/png">
+    <link rel="icon" href="assets/static/favicon-32x32.png" type="image/png">
+    <link rel="icon" href="assets/static/favicon-192x192.png" type="image/png">
+    <link rel="icon" href="assets/static/favicon-512x512.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/static/apple-touch-icon.png" type="image/png">
+    <link rel="manifest" href="assets/static/site.webmanifest">
+    <title>Поиск / Pickafilm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="assets/styles/main.css">
+  </head>
   <body>
     <div class="section-outer">
       <div class="container">
