@@ -1,5 +1,5 @@
 <div class="navbar-user">
-	<a href="#" class="navbar-user__main-link">Войти</a>
+	<a href="form" class="navbar-user__main-link">Войти</a>
 	<button class="navbar-user__burger">
 		<span></span>
 		<span></span>

@@ -123,8 +123,9 @@ body {
 }
 
 .content .cards .card {
-  display: flex;
-  flex-basis: 49%;
+	display: flex;
+	align-items: center;
+	flex-basis: 49%;
   background-color: var(--card-color);
   padding: 30px;
   border-radius: 50px;

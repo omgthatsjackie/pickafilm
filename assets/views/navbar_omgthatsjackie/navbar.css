@@ -221,8 +221,13 @@
 
 @media (max-width: 576px) {
   .navbar__logo {
-    transform: scale(0.8);
-  }
+		width: 195px;
+		height: 22px;
+		transition: all 0.4s ease 0s;
+	}
+	.navbar__logo:hover {
+		transform: scaleX(1.1) scaleY(0.75);
+	}
   .navbar-user__avatar {
     width: 60px;
     height: 60px;
