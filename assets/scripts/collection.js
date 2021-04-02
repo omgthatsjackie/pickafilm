@@ -22,29 +22,18 @@ const themeHandler = () => {
   localStorage.setItem("theme", theme);
 };
 
-const linkHandler = event => {
-  if (!event.target.classList.contains("active")) {
-    document
-      .querySelector(".navbar-menu__link.active")
-      .classList.remove("active");
-    event.target.classList.add("active");
+// const linkHandler = (event) => {
+//   if (!event.target.classList.contains("active")) {
+//     document
+//       .querySelector(".navbar-menu__link.active")
+//       .classList.remove("active");
+//     event.target.classList.add("active");
 
-    navbarMenuLineAnimation(event);
+//     navbarMenuLineAnimation(event);
+//   }
+// };
 
-    // switch (event.target.textContent) {
-    //   case "Фильмы":
-    //     searchInput.placeholder = "Введите название фильма";
-    //     renderPopular("movie", "title", "release_date");
-    //     break;
-    //   case "Сериалы":
-    //     searchInput.placeholder = "Введите название сериала";
-    //     renderPopular("tv", "name", "first_air_date");
-    //     break;
-    // }
-  }
-};
-
-const navbarMenuLineAnimation = event => {
+const navbarMenuLineAnimation = (event) => {
   const active = document.querySelector(".navbar-menu__link.active");
   const activeWidth = active.offsetWidth;
   const activeLeft = active.offsetLeft;
@@ -58,7 +47,7 @@ const navbarMenuLineAnimation = event => {
   navbarMenuLine.style.opacity = 1;
 };
 
-const bodyHandler = event => {
+const bodyHandler = (event) => {
   if (event.target.closest(".navbar-user__avatar")) {
     menu.classList.toggle("active");
   } else {
@@ -66,17 +55,23 @@ const bodyHandler = event => {
   }
 };
 
-navbarMenuLinks.forEach(link => {
+navbarMenuLinks.forEach((link) => {
   link.addEventListener("click", linkHandler);
 });
 
 document.body.addEventListener("click", bodyHandler);
 
-window.addEventListener("resize", event => {
+window.addEventListener("resize", (event) => {
   navbarMenuLineAnimation(event);
 });
 
-document.addEventListener("DOMContentLoaded", event => {
+document.addEventListener("DOMContentLoaded", (event) => {
+  document
+    .querySelector(".navbar-menu__link.active")
+    .classList.remove("active");
+  document
+    .querySelector(".navbar-menu__link[href='collection']")
+    .classList.add("active");
   navbarMenuLineAnimation(event);
 });
 

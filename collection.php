@@ -12,7 +12,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,12 +30,8 @@
     <title>Коллекция / Pickafilm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="assets/styles/collection.css">
-    <link rel="stylesheet" href="assets/views/navbar_omgthatsjackie/navbar.css">
-
-
-</head>
+  </head>
   <body>
-
     <div class="section-outer">
       <div class="container">
         <?php if(!isset($_SESSION['user']))require_once "assets/views/navbar_omgthatsjackie/navbar-unlogged.php";
