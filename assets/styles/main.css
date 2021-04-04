@@ -144,23 +144,32 @@ body {
   outline: 0;
 }
 
+.content .search .filter-wrapper {
+	position: fixed;
+	width: 58%;
+	padding: 40px 0;
+	top: 250px;
+	z-index: 6;
+	visibility: hidden;
+	pointer-events: none;
+	opacity: 0;
+}
+
 .content .search .filter {
-  position: absolute;
-  display: block;
-  width: 100%;
-  top: 160%;
-  right: 17.5%;
+	position: relative;
+	display: block;
+	width: 100%;
+	/* width: 58%; */
+	/* left: 0; */
+	/* top: 280px; */
+	/* transform: translateY(-46%) */
   background: var(--menu-color);
   border-radius: 10px;
   padding: 20px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
   transition: 0.3s;
-  z-index: 6;
 }
 
-.content .search .filter.active {
+.content .search .filter-wrapper.active {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
@@ -169,7 +178,7 @@ body {
 .content .search .filter::before {
   position: absolute;
   top: -30px;
-  right: 60px;
+  right: 23%;
   content: '';
   width: 70px;
   height: 70px;
@@ -474,9 +483,6 @@ body {
 }
 
 @media (max-width: 1600px) {
-  .content .search .filter {
-    width: 75%;
-  }
   .content
     .search
     .filter__list
@@ -498,10 +504,10 @@ body {
     padding: 10px 20px;
     width: 450px;
   }
-  .content .search .filter {
-    top: 200%;
-    right: 15%;
-  }
+
+	.content .search .filter::before {
+		display: none;
+	}
   .content .cards .card .title {
     font-size: 23px;
   }
@@ -523,11 +529,10 @@ body {
 @media (max-width: 992px) {
   .content {
     width: 850px;
-  }
-  .content .search .filter {
-    top: 200%;
-    right: 11%;
-  }
+	}
+	.content .search .filter-wrapper {
+		width: 65%;
+	}
   .content
     .search
     .filter__list
@@ -550,16 +555,15 @@ body {
 @media (max-width: 870px) {
   .content {
     width: 600px;
-  }
+	}
+	.content .search .filter-wrapper {
+		width: 67%;
+	}
   .content .search {
     font-size: 20px;
   }
   .content .search input {
     width: 400px;
-  }
-  .content .search .filter {
-    top: 200%;
-    right: -1%;
   }
   .content
     .search
@@ -583,31 +587,19 @@ body {
   }
 }
 
-@media (max-width: 650px) {
-  .content .search .filter {
-    right: 3%;
-  }
-  .content .search .filter::before {
-    right: 40px;
-  }
-}
-
 @media (max-width: 576px) {
   .content {
     max-width: 350px;
-  }
+	}
+	.content .search .filter-wrapper {
+		width: 75%;
+		padding: 20px;
+	}
   .content .search {
     font-size: 20px;
   }
   .content .search input {
     width: 300px;
-  }
-  .content .search .filter {
-    right: -16%;
-    width: 445px;
-  }
-  .content .search .filter::before {
-    right: 40px;
   }
   .content .cards .card .title {
     max-width: 200px;
@@ -628,19 +620,11 @@ body {
 		width: 300px;
 		font-size: 18px;
     margin-right: 15px;
-  }
-  .content .search .filter {
-    top: 180%;
-    right: -12%;
-    width: 390px;
-    padding: 15px;
-  }
-  .content .search .filter::before {
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    top: -20px;
-  }
+	}
+	.content .search .filter-wrapper {
+		width: 79%;
+		padding: 20px;
+	}
   .content
     .search
     .filter__list
@@ -675,7 +659,11 @@ body {
 @media (max-width: 360px) {
   .content {
     max-width: 300px;
-  }
+	}
+	.content .search .filter-wrapper {
+		width: 90%;
+		padding: 20px;
+	}
   .content .search {
     font-size: 18px;
   }
@@ -690,4 +678,22 @@ body {
   .content .cards .card .film-labels .genres {
     display: none;
   }
+}
+
+.content .search .filter-wrapper {
+	display: flex;
+	align-items: center;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 100vh;
+	transition: all 0.3s ease 0s;
+}
+
+.content .search .filter {
+	overflow-y: auto;
+	max-height: 100%;
+}
+
+.content .search .filter::before {
+	display: none;
 }
