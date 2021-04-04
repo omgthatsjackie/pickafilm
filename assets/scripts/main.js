@@ -9,7 +9,7 @@ const allCheckboxGenres = document.querySelectorAll(".checkbox-genres");
 const dateNew = document.querySelector("#date_new");
 const dateOld = document.querySelector("#date_old");
 const filterToggler = document.querySelector(".filter-toggler");
-const filterElement = document.querySelector(".filter");
+const filterElement = document.querySelector(".filter-wrapper");
 
 const API_KEY = "11bff7e96c4e8ec266c7fbd8607606ca";
 
@@ -315,8 +315,6 @@ const navbarMenuLineAnimation = (event) => {
   const active = document.querySelector(".navbar-menu__link.active");
   const activeWidth = active.offsetWidth;
   const activeLeft = active.offsetLeft;
-
-  console.log(active, activeWidth, activeLeft);
 
   if (event.type === "click") {
     navbarMenuLine.style.transition = ".3s";
