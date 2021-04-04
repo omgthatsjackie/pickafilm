@@ -345,7 +345,7 @@ const bodyHandler = (event) => {
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  const href = window.location.href;
+	const href = window.location.href;
 
   if (href.includes("series")) {
     document
@@ -377,3 +377,31 @@ document.body.addEventListener("click", bodyHandler);
 window.addEventListener("resize", (event) => {
   navbarMenuLineAnimation(event);
 });
+
+(function(url) {
+  // Create a new `Image` instance
+  const image = new Image();
+
+  image.onload = function() {
+    // Inside here we already have the dimensions of the loaded image
+    const style = [
+      // Hacky way of forcing image's viewport using `font-size` and `line-height`
+      'font-size: 1px;',
+
+      // Hacky way of forcing a middle/center anchor point for the image
+      'padding: ' + this.height * .5 + 'px ' + this.width * .5 + 'px;',
+
+      // Set image dimensions
+      'background-size: ' + this.width + 'px ' + this.height + 'px;',
+
+      // Set image URL
+      'background: url('+ url +') no-repeat;'
+     ].join(' ');
+
+     // notice the space after %c
+     console.log('%c ', style);
+  };
+
+  // Actually loads the image
+  image.src = url;
+})('https://i.kym-cdn.com/photos/images/original/001/809/460/421.gif');

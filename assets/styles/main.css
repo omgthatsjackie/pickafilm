@@ -27,7 +27,7 @@
 *::after {
   box-sizing: border-box;
 }
-
+ 
 :root {
   --text-color: #000;
   --bg-color: #fff;
