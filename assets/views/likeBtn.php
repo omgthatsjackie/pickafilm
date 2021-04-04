@@ -13,4 +13,4 @@
 							<svg class="like-btn__icon <?php if ($isLiked) echo "liked";?> spriteIcon">
 								<use xlink:href="./assets/images/sprite.svg#heart"/>
 							</svg>
-						</div>
+</div>
