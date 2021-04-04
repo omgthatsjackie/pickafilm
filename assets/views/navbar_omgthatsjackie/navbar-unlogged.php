@@ -24,7 +24,7 @@
   </nav>
 
   <div class="navbar-user">
-    <a class="navbar-user__avatar" href="form">Войти</a>
+    <a class="navbar-user__avatar" href="auth">Войти</a>
 
     <div class="navbar-user__menu-wrapper">
       <div class="navbar-user__menu">
@@ -45,7 +45,7 @@
           <a href="main#films" class="navbar-user__link navbar-user__menu-link">Фильмы</a>
           <a href="main#series" class="navbar-user__link navbar-user__menu-link">Сериалы</a>
           <a href="collection" class="navbar-user__link navbar-user__menu-link">Ваша коллекция</a>
-          <a href="form" class="navbar-user__link">Ваш профиль</a>
+          <a href="auth" class="navbar-user__link">Ваш профиль</a>
           <a href="#" class="navbar-user__link">Выйти из профиля</a>
         </div>
       </div>

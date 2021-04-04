@@ -161,7 +161,7 @@ const renderPopular = async (type, title, release) => {
   const html = await Promise.all(
     popular.results.map(async (result) => {
       return `
-      <a href="filmPage?id=${result.id}&type=${type}" class="card" data-id="${
+      <a href="film?id=${result.id}&type=${type}" class="card" data-id="${
         result.id
       }">
         <div class="poster">
@@ -236,7 +236,7 @@ const renderCards = async (type, title, release, query) => {
   const html = await Promise.all(
     data.results.map(async (result) => {
       return `
-      <a href="filmPage?id=${result.id}&type=${type}" class="card" data-id="${
+      <a href="film?id=${result.id}&type=${type}" class="card" data-id="${
         result.id
       }">
         <div class="poster">

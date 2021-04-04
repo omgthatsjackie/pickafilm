@@ -55,9 +55,9 @@ const bodyHandler = (event) => {
   }
 };
 
-navbarMenuLinks.forEach((link) => {
-  link.addEventListener("click", linkHandler);
-});
+// navbarMenuLinks.forEach((link) => {
+//   link.addEventListener("click", linkHandler);
+// });
 
 document.body.addEventListener("click", bodyHandler);
 

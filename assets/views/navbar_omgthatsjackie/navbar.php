@@ -47,7 +47,7 @@
           <a href="main#films" class="navbar-user__link navbar-user__menu-link">Фильмы</a>
           <a href="main#series" class="navbar-user__link navbar-user__menu-link">Сериалы</a>
           <a href="collection" class="navbar-user__link navbar-user__menu-link">Ваша коллекция</a>
-          <a href="userPage" class="navbar-user__link">Ваш профиль</a>
+          <a href="profile" class="navbar-user__link">Ваш профиль</a>
           <a href="logout" class="navbar-user__link">Выйти из профиля</a>
         </div>
       </div>
