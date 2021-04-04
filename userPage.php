@@ -132,6 +132,7 @@
 		</div>
 
 		<!-- scripts -->
+		<script src="assets/views/navbar_hlebushek/assets/scripts/test.js"></script>
 		<script src="./assets/scripts/userPage.js"></script>
 	</body>
 </html>

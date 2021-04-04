@@ -136,6 +136,7 @@
 
 		<!-- scripts -->
 		<script src="assets/scripts/filmPage.js"></script>
+		<script src="assets/views/navbar_hlebushek/assets/scripts/test.js"></script>
         <script src="assets/libs/JQuery/jquery.js"></script>
         <script src="assets/scripts/like.js"></script>
 	</body>

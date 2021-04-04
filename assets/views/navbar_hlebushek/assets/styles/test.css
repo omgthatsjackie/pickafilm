@@ -173,7 +173,7 @@ body.burger-menu-active {
 	overflow: hidden;
 	border-width: 0;
   border-radius: 50%;
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .navbar-user__avatar img {
