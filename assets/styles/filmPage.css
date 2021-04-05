@@ -145,7 +145,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
@@ -156,6 +156,62 @@ ul[class],
 ol[class] {
   padding: 0;
   list-style: none;
+}
+
+:root {
+  --text-color: #000;
+  --bg-color: #fff;
+  --card-color: #f5f5f5;
+  --shadow-color: #0000001a;
+  --caret-color: #000;
+  --icon-color: #807f7f;
+  --hover-color: #e2e2e2;
+  --menu-color: #f5f5f5;
+	--stroke-color: #e3e3e3;
+	--descr-color: #000;
+}
+
+.dark-theme {
+  --text-color: #fff;
+  --bg-color: #181818;
+  --card-color: #222222;
+  --shadow-color: #00000050;
+  --caret-color: #fff;
+  --icon-color: #fff;
+  --hover-color: #2f2f2f;
+  --menu-color: #222222;
+	--stroke-color: #2e2e2e;
+	--descr-color: #a5a5a5;
+}
+
+.theme-toggler {
+  position: fixed;
+  top: 90%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--card-color);
+  border-radius: 50%;
+  box-shadow: 0 0 50px 25px var(--shadow-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-toggler svg path {
+  fill: var(--icon-color);
+  transition: 0.3s;
+}
+
+.theme-toggler:hover svg path {
+  fill: #7656d2;
+}
+
+body {
+	background: var(--bg-color);
+	transition: background 0.3s ease 0s;
 }
 
 body,
@@ -464,7 +520,9 @@ select {
 .column2__title {
   margin-top: 30px;
   font-weight: 700;
-  font-size: 70px;
+	font-size: 70px;
+	color: var(--text-color);
+	transition: color 0.3s ease 0s;
 }
 
 .inf {
@@ -507,11 +565,15 @@ select {
 .inf__tags {
   font-weight: 600;
   font-size: 30px;
+	color: var(--text-color);
+	transition: color 0.3s ease 0s;
 }
 
 .inf__time {
   margin-right: 0;
-  font-size: 30px;
+	font-size: 30px;
+	color: var(--text-color);
+	transition: color 0.3s ease 0s;
 }
 
 .description {
@@ -519,14 +581,18 @@ select {
 }
 
 .description__title {
-  font-size: 40px;
+	font-size: 40px;
+	color: var(--text-color);
+	transition: color 0.3s ease 0s;
 }
 
 .description__text {
   max-width: 100%;
   margin-top: 30px;
   font-size: 30px;
-  line-height: 110%;
+	line-height: 110%;
+	color: var(--text-color);
+	transition: color 0.3s ease 0s;
 }
 
 .column1__img img {

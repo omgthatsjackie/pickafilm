@@ -98,12 +98,14 @@ if (navbarBurger) {
 	})
 }
 
-navbarUserAvatar.addEventListener("click", (e) => {
-	navbarUserMenu.classList.toggle("active")
-})
+if (navbarUserAvatar) {
+	navbarUserAvatar.addEventListener("click", (e) => {
+		navbarUserMenu.classList.toggle("active")
+	})
+}
 
 document.body.addEventListener("click", (e) => {
-	if (e.target !== document.querySelector(".navbar-user__avatar img")) {
+	if (e.target !== document.querySelector(".navbar-user__avatar img") && navbarUserMenu) {
 		navbarUserMenu.classList.remove("active")
 	}
 })
