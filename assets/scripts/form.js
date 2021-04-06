@@ -61,7 +61,7 @@ function checkInput(input) {
 // validation shit
 function nicknameValidate(input, error) {
 	if (input.value === null || input.value === "") {
-		// error.textContent = null
+		error.textContent = null
 		input.classList.remove("error")
 	} else if (input.value.indexOf(" ") !== -1) {
 		input.classList.add("error")
@@ -73,32 +73,47 @@ function nicknameValidate(input, error) {
 		input.classList.add("error")
 		error.textContent = "Ваш никнейм должен состоять максимум из 16 символов"
 	} else {
-		// error.textContent = null
+		error.textContent = null
 		input.classList.remove("error")
 	}
 }
 
 function nicknameEmailValidate(input, error) {
 	if (input.value === null || input.value === "") {
-
 		input.classList.remove("error")
 	} else {
-		// error.textContent = null
+		error.textContent = null
 		input.classList.remove("error")
 	}
 }
 
 function emailValidate(input, error) {
 	if (input.value === null || input.value === "") {
-		// error.textContent = null
+		error.textContent = null
 		input.classList.remove("error")
 	} else if (input.value.indexOf("@") === -1) {
 		error.textContent = "В вашем емайле должен быть данный символ - @"
 		input.classList.add("error")
 	} else {
-		// error.textContent = null
+		error.textContent = null
 		input.classList.remove("error")
 	}
+}
+
+function buttonDisableChange() {
+	
+	if (document.querySelector('.reg-form .form__nickname .form__input').value !== '' && document.querySelector('.reg-form .form__email .form__input').value !== '' && document.querySelector('.reg-form .form__email .form__error').textContent === '' && document.querySelector('.reg-form .form__password .form__input').value !== '' && document.querySelector('.reg-form .form__password .form__error').textContent === '' && document.querySelector('.reg-form .form__password-verify .form__input').value !== '' && document.querySelector('.reg-form .form__password-verify .form__error').textContent === '') {
+		document.querySelector('.reg-submit').removeAttribute('disabled');
+	} else {
+		document.querySelector('.reg-submit').disabled = true;
+	}
+
+	if(document.querySelector('.login-form .form__nickname-email .form__input').value !== '' && document.querySelector('.login-form .form__password .form__input').value !== '') {
+		document.querySelector('.login-submit').removeAttribute('disabled');
+	} else {
+		document.querySelector('.login-submit').disabled = true;
+	}
+
 }
 
 function passwordValidate(input, error) {
@@ -108,8 +123,8 @@ function passwordValidate(input, error) {
 		// error.textContent = null
 		input.classList.remove("error")
 	} else if (input.value.indexOf(" ") !== -1) {
-		input.classList.add("error")
-		error.textContent = "В вашем пароле не должно быть пробелов"
+		input.classList.add("error");
+		error.textContent = "В вашем пароле не должно быть пробелов";
 	} else if (input.value.length < validateOptions.password.min) {
 		input.classList.add("error")
 		error.textContent = "Ваш пароль должен состоять минимум из 6 символов"
@@ -117,31 +132,34 @@ function passwordValidate(input, error) {
 		input.classList.add("error")
 		error.textContent = "Ваш пароль должен состоять максимум из 16 символов"
 	} else {
-		// error.textContent = null
-		input.classList.remove("error")
+		error.textContent = null;
+		input.classList.remove("error");
 	}
+
 	// password verify
-	if ((passwordVerifyInput.value !== null || passwordVerifyInput.value !== "") && passwordVerifyInput.value !== input.value) {
+	if ((passwordVerifyInput.value !== "") && passwordVerifyInput.value !== input.value) {
 		passwordVerifyInput.classList.add("error")
 		passwordVerifyError.textContent = "Пароли должны совпадать"
 	} else if (passwordVerifyInput.value === null || passwordVerifyInput.value === "" || passwordVerifyInput.value === input.value) {
+		console.log('bruh');
 		passwordVerifyInput.classList.remove("error")
-		// passwordVerifyError.textContent = null
+		passwordVerifyError.textContent = null
 	} else {
+		console.log('bruh2');
 		passwordVerifyInput.classList.remove("error")
-		// passwordVerifyError.textContent = null
+		passwordVerifyError.textContent = null
 	}
 }
 
 function passwordVerifyValidate(input, error) {
 	if (input.value === null || input.value === "") {
-		// error.textContent = null
+		error.textContent = null
 		input.classList.remove("error")
 	} else if (input.value !== regFormPasswordInput.value) {
 		input.classList.add("error")
 		error.textContent = "Пароли должны совпадать"
 	} else {
-		// error.textContent = null
+		error.textContent = null
 		input.classList.remove("error")
 	}
 }
@@ -280,6 +298,8 @@ allInputs.forEach((input) => {
 		} else if (classlist.contains("form__nickname-email")) {
 			nicknameEmailValidate(input, error)
 		}
+
+		buttonDisableChange();
 	})
 });
 
