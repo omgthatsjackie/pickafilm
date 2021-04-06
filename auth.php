@@ -97,7 +97,7 @@
 					
 					
 									<!-- submit btn -->
-									<input type="submit" class="form__submit reg-submit purple-btn" name="reg_submit" value="Зарегистрироваться">
+									<input disabled type="submit" class="form__submit reg-submit purple-btn" name="reg_submit" value="Зарегистрироваться">
 								</form>
 					
 								<!-- login form -->
@@ -135,7 +135,7 @@
 									</div>
 					
 									<!-- login submit btn -->
-									<input type="submit" class="form__submit login-submit purple-btn" name="log_submit" value="Войти">
+									<input disabled type="submit" class="form__submit login-submit purple-btn" name="log_submit" value="Войти">
 								</form>
 							</div>
 						</div>
