@@ -4,7 +4,7 @@ const themeToggler = document.querySelector(".theme-toggler");
 const navbarMenuLine = document.querySelector(".navbar-menu__line");
 const navbarMenuLinks = document.querySelectorAll(".navbar-menu__link");
 const menu = document.querySelector(".navbar-user__menu-wrapper");
-const avatar = document.querySelector(".navbar-user__avatar");
+const avatar = document.querySelector("div.navbar-user__avatar");
 const allCheckboxGenres = document.querySelectorAll(".checkbox-genres");
 const dateNew = document.querySelector("#date_new");
 const dateOld = document.querySelector("#date_old");
@@ -326,7 +326,7 @@ const navbarMenuLineAnimation = (event) => {
 };
 
 const bodyHandler = (event) => {
-  if (event.target.closest(".navbar-user__avatar")) {
+  if (event.target.closest("div.navbar-user__avatar")) {
     menu.classList.toggle("active");
   } else if (event.target.closest(".filter-toggler")) {
     document.body.classList.toggle("active-filter");
