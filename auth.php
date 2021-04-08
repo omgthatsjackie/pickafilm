@@ -74,7 +74,7 @@
                     <input type="password" class="form__input" autocomplete="current-password" placeholder="Повторите пароль">
                     <p class="form__error"></p>
                   </div>
-                  <input type="submit" class="form__submit reg-submit purple-btn" name="reg_submit" value="Зарегистрироваться">
+                  <input disabled type="submit" class="form__submit reg-submit purple-btn" name="reg_submit" value="Зарегистрироваться">
                 </form>
           
                 <form action="core/scripts/formActions" method="POST" class="auth__form login-form">
@@ -103,7 +103,7 @@
                       <use xlink:href="assets/images/sprite.svg#eye"/>
                     </svg>
                   </div>
-                  <input type="submit" class="form__submit login-submit purple-btn" name="log_submit" value="Войти">
+                  <input disabled type="submit" class="form__submit login-submit purple-btn" name="log_submit" value="Войти">
                 </form>
               </div>
             </div>

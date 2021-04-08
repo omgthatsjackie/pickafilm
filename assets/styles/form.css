@@ -497,6 +497,11 @@ select {
   border-radius: 20px;
 }
 
+.form__submit:disabled {
+  background: #a5a5a5;
+  pointer-events: none;
+}
+
 .password-checker {
   position: relative;
   margin-top: 40px;
