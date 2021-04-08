@@ -345,7 +345,7 @@ const bodyHandler = (event) => {
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
-	const href = window.location.href;
+  const href = window.location.href;
 
   if (href.includes("series")) {
     document

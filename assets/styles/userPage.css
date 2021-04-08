@@ -143,7 +143,7 @@
 }
 
 :root {
-	--popup-color: #fff;
+  --popup-color: #fff;
   --text-color: #000;
   --bg-color: #fff;
   --card-color: #f5f5f5;
@@ -152,12 +152,12 @@
   --icon-color: #807f7f;
   --hover-color: #e2e2e2;
   --menu-color: #f5f5f5;
-	--stroke-color: #e3e3e3;
-	--descr-color: #000;
+  --stroke-color: #e3e3e3;
+  --descr-color: #000;
 }
 
 .dark-theme {
-	--popup-color: #222222;
+  --popup-color: #222222;
   --text-color: #fff;
   --bg-color: #181818;
   --card-color: #222222;
@@ -166,7 +166,7 @@
   --icon-color: #fff;
   --hover-color: #2f2f2f;
   --menu-color: #222222;
-	--stroke-color: #2e2e2e;
+  --stroke-color: #2e2e2e;
 }
 
 *,
@@ -243,8 +243,8 @@ q {
 }
 
 body {
-	background: var(--bg-color);
-	transition: background 0.3s ease 0s;
+  background: var(--bg-color);
+  transition: background 0.3s ease 0s;
   min-height: 100%;
   font-family: "SFProDisplay";
   line-height: 1;
@@ -551,8 +551,8 @@ body.deletePopupActive {
 
 .user__nickname {
   font-weight: 500;
-	font-size: 60px;
-	color: var(--text-color);
+  font-size: 60px;
+  color: var(--text-color);
 }
 
 .stats {
@@ -692,14 +692,14 @@ body.deletePopupActive {
   font-weight: 500;
   font-size: 35px;
   text-align: center;
-	color: var(--text-color);
+  color: var(--text-color);
 }
 
 .delete-popup__subtitle {
   max-width: 70%;
   margin: 0 auto;
   margin-top: 20px;
-	color: var(--text-color);
+  color: var(--text-color);
   font-weight: 300;
   font-size: 20px;
   line-height: 1.3;

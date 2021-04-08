@@ -145,7 +145,7 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -167,8 +167,8 @@ ol[class] {
   --icon-color: #807f7f;
   --hover-color: #e2e2e2;
   --menu-color: #f5f5f5;
-	--stroke-color: #e3e3e3;
-	--descr-color: #000;
+  --stroke-color: #e3e3e3;
+  --descr-color: #000;
 }
 
 .dark-theme {
@@ -180,8 +180,8 @@ ol[class] {
   --icon-color: #fff;
   --hover-color: #2f2f2f;
   --menu-color: #222222;
-	--stroke-color: #2e2e2e;
-	--descr-color: #a5a5a5;
+  --stroke-color: #2e2e2e;
+  --descr-color: #a5a5a5;
 }
 
 .theme-toggler {
@@ -210,8 +210,8 @@ ol[class] {
 }
 
 body {
-	background: var(--bg-color);
-	transition: background 0.3s ease 0s;
+  background: var(--bg-color);
+  transition: background 0.3s ease 0s;
 }
 
 body,
@@ -520,9 +520,9 @@ select {
 .column2__title {
   margin-top: 30px;
   font-weight: 700;
-	font-size: 70px;
-	color: var(--text-color);
-	transition: color 0.3s ease 0s;
+  font-size: 70px;
+  color: var(--text-color);
+  transition: color 0.3s ease 0s;
 }
 
 .inf {
@@ -565,15 +565,15 @@ select {
 .inf__tags {
   font-weight: 600;
   font-size: 30px;
-	color: var(--text-color);
-	transition: color 0.3s ease 0s;
+  color: var(--text-color);
+  transition: color 0.3s ease 0s;
 }
 
 .inf__time {
   margin-right: 0;
-	font-size: 30px;
-	color: var(--text-color);
-	transition: color 0.3s ease 0s;
+  font-size: 30px;
+  color: var(--text-color);
+  transition: color 0.3s ease 0s;
 }
 
 .description {
@@ -581,18 +581,18 @@ select {
 }
 
 .description__title {
-	font-size: 40px;
-	color: var(--text-color);
-	transition: color 0.3s ease 0s;
+  font-size: 40px;
+  color: var(--text-color);
+  transition: color 0.3s ease 0s;
 }
 
 .description__text {
   max-width: 100%;
   margin-top: 30px;
   font-size: 30px;
-	line-height: 110%;
-	color: var(--text-color);
-	transition: color 0.3s ease 0s;
+  line-height: 110%;
+  color: var(--text-color);
+  transition: color 0.3s ease 0s;
 }
 
 .column1__img img {
@@ -866,8 +866,8 @@ select {
   }
 
   .column2__title {
-		text-align: center;
-		font-size: 50px;
+    text-align: center;
+    font-size: 50px;
   }
 
   .inf {

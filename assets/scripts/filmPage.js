@@ -162,160 +162,160 @@ themeToggler.addEventListener("click", themeHandler);
 })('https://i.kym-cdn.com/photos/images/original/001/809/460/421.gif');
 
 likeclickTlNoLiked
-	.to(likeBtnIcon, 0, {
-		transition: "none",
-	})
-	.to(likeBtnIcon, 0.4, {
-		scale: 0.7,
-		ease: "power2.out",
-		fill: "#ffffff",
-	})
-	.to(likeBtnIcon, 0.8, {
-		scale: 1,
-		ease: "elastic.out(1, 0.3)",
-	})
-	.to(likeBtnIcon, 0, {
-		transition: "all 0.4s ease 0s",
-	})
+  .to(likeBtnIcon, 0, {
+    transition: "none",
+  })
+  .to(likeBtnIcon, 0.4, {
+    scale: 0.7,
+    ease: "power2.out",
+    fill: "#ffffff",
+  })
+  .to(likeBtnIcon, 0.8, {
+    scale: 1,
+    ease: "elastic.out(1, 0.3)",
+  })
+  .to(likeBtnIcon, 0, {
+    transition: "all 0.4s ease 0s",
+  })
 likeclickTlLiked
-	.to(likeBtnIcon, 0, {
-		transition: "none",
-	})
-	.to(likeBtnIcon, 0.4, {
-		scale: 0.7,
-		ease: "power2.out",
-		fill: "none",
-	})
-	.to(likeBtnIcon, 0.8, {
-		scale: 1,
-		ease: "elastic.out(1, 0.3)",
-	})
-	.to(likeBtnIcon, 0, {
-		transition: "all 0.4s ease 0s",
-	})
+  .to(likeBtnIcon, 0, {
+    transition: "none",
+  })
+  .to(likeBtnIcon, 0.4, {
+    scale: 0.7,
+    ease: "power2.out",
+    fill: "none",
+  })
+  .to(likeBtnIcon, 0.8, {
+    scale: 1,
+    ease: "elastic.out(1, 0.3)",
+  })
+  .to(likeBtnIcon, 0, {
+    transition: "all 0.4s ease 0s",
+  })
 
 // -- system --
 // const mql = window.matchMedia("(max-width: 600px)")
 
 // ===== functions =====
 let user = {
-	thisfilmid: window.location.href
+  thisfilmid: window.location.href
 };
 // fetch like change
 //============================================   [ALEX]   ==============================================================
 const fetchLikeChange = () => {
-	const request = fetch(likeUrl, {
-		method: "POST",
-	})
-	request
-		.then(() => {})
-		.catch((err) => {
-			console.error("local error: ", err)
-		})
+  const request = fetch(likeUrl, {
+    method: "POST",
+  })
+  request
+    .then(() => {})
+    .catch((err) => {
+      console.error("local error: ", err)
+    })
 }
 //======================================================================================================================
 
 function likeIconCheck() {
-	if (likeBtnIcon.classList.contains("liked")) {
-		likeBtnIcon.style.fill = "#ffffff"
-		liked = true
-	}
+  if (likeBtnIcon.classList.contains("liked")) {
+    likeBtnIcon.style.fill = "#ffffff"
+    liked = true
+  }
 }
 
 // -- circle animation --
 const circleAnimation = () => {
-	// counting length for bd
-	const radius = Math.floor(circleBarBg.getBoundingClientRect().width / 2)
-	const percent = 100 - circleBarText.getAttribute("data-rate") * 10
-	const circumference = Math.floor(2 * Math.PI * radius)
-	const bdlength = (circumference / 100) * percent
+  // counting length for bd
+  const radius = Math.floor(circleBarBg.getBoundingClientRect().width / 2)
+  const percent = 100 - circleBarText.getAttribute("data-rate") * 10
+  const circumference = Math.floor(2 * Math.PI * radius)
+  const bdlength = (circumference / 100) * percent
 
-	// clear styles
-	circleBarBorder.style.strokeDasharray = circumference
-	circleBarBorder.style.strokeDashoffset = circumference
-	circleBarBorder.style.stroke = "#7656d2"
+  // clear styles
+  circleBarBorder.style.strokeDasharray = circumference
+  circleBarBorder.style.strokeDashoffset = circumference
+  circleBarBorder.style.stroke = "#7656d2"
 
-	// animating
-	const circleBarTimeline = gsap.timeline()
-	const endValue = circleBarText.getAttribute("data-rate")
-	const startValue = { val: 0 }
-	circleBarTimeline
-		.to(circleBarBorder, 2, {
-			strokeDashoffset: bdlength,
-		})
-		.to(
-			startValue,
-			2,
-			{
-				val: endValue,
-				onUpdate: () => {
-					circleBarText.textContent = startValue.val.toFixed(1)
-				},
-			},
-			"-=2",
-		)
+  // animating
+  const circleBarTimeline = gsap.timeline()
+  const endValue = circleBarText.getAttribute("data-rate")
+  const startValue = { val: 0 }
+  circleBarTimeline
+    .to(circleBarBorder, 2, {
+      strokeDashoffset: bdlength,
+    })
+    .to(
+      startValue,
+      2,
+      {
+        val: endValue,
+        onUpdate: () => {
+          circleBarText.textContent = startValue.val.toFixed(1)
+        },
+      },
+      "-=2",
+    )
 }
 
 // -- circle border animation --
 const circleBorderAnimation = () => {
-	const radius = Math.floor(circleBarBg.getBoundingClientRect().width / 2)
-	const percent = 100 - circleBarText.getAttribute("data-rate") * 10
-	const circumference = Math.floor(2 * Math.PI * radius)
-	const bdlength = (circumference / 100) * percent
-	circleBarBorder.style.strokeDasharray = circumference
+  const radius = Math.floor(circleBarBg.getBoundingClientRect().width / 2)
+  const percent = 100 - circleBarText.getAttribute("data-rate") * 10
+  const circumference = Math.floor(2 * Math.PI * radius)
+  const bdlength = (circumference / 100) * percent
+  circleBarBorder.style.strokeDasharray = circumference
 
-	gsap.to(circleBarBorder, 0.5, {
-		strokeDashoffset: bdlength,
-	})
+  gsap.to(circleBarBorder, 0.5, {
+    strokeDashoffset: bdlength,
+  })
 }
 
 // -- like click animation --
 const likeClickAnimation = () => {
-	const active = document.querySelector(".like-btn__button span.active")
+  const active = document.querySelector(".like-btn__button span.active")
 
-	if (liked) {
-		if (clickedOnce) {
-			likeclickTlNoLiked.kill()
-			likeclickTlLiked.restart()
-		} else {
-			clickedOnce = true
-			likeclickTlLiked.play()
-		}
-	} else if (clickedOnce) {
-		likeclickTlLiked.kill()
-		likeclickTlNoLiked.restart()
-	} else {
-		clickedOnce = true
-		likeclickTlNoLiked.play()
-	}
+  if (liked) {
+    if (clickedOnce) {
+      likeclickTlNoLiked.kill()
+      likeclickTlLiked.restart()
+    } else {
+      clickedOnce = true
+      likeclickTlLiked.play()
+    }
+  } else if (clickedOnce) {
+    likeclickTlLiked.kill()
+    likeclickTlNoLiked.restart()
+  } else {
+    clickedOnce = true
+    likeclickTlNoLiked.play()
+  }
 
-	active.classList.remove("active")
-	if (active.classList.contains("like-btn__noLikeText")) {
-		document.querySelector(".like-btn__likeText").classList.add("active")
-	} else {
-		document.querySelector(".like-btn__noLikeText").classList.add("active")
-	}
-	liked = !liked
+  active.classList.remove("active")
+  if (active.classList.contains("like-btn__noLikeText")) {
+    document.querySelector(".like-btn__likeText").classList.add("active")
+  } else {
+    document.querySelector(".like-btn__noLikeText").classList.add("active")
+  }
+  liked = !liked
 }
 
 // -- like icon phone check --
 const likeIconPhoneCheck = () => {
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		likeBtnIcon.classList.add("phone-active")
-		likeBtnButton.classList.add("phone-active")
-	}
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    likeBtnIcon.classList.add("phone-active")
+    likeBtnButton.classList.add("phone-active")
+  }
 }
 
 // ===== listeners =====
 
 // -- content loading listener --
 document.addEventListener("DOMContentLoaded", () => {
-	// circle
-	circleAnimation()
-	if (likeBtnButton) {
-		likeIconPhoneCheck()
-		likeIconCheck()
-	}
+  // circle
+  circleAnimation()
+  if (likeBtnButton) {
+    likeIconPhoneCheck()
+    likeIconCheck()
+  }
 });
 
 // -- window resize event --
@@ -325,7 +325,7 @@ window.addEventListener("resize", circleBorderAnimation);
 
 // -- likeBtn click listener --
 if (likeBtnButton) {
-	likeBtnButton.addEventListener("click", likeClickAnimation)
+  likeBtnButton.addEventListener("click", likeClickAnimation)
 }
 
 // -- hover listener --

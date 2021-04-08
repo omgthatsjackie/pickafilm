@@ -19,45 +19,45 @@ const deleteUrl = "core/scripts/deleteUser"
 
 // -- funcs --
 const deletePopupAppearanceOn = () => {
-	deletePopup.classList.add("active")
-	deletePopupBlock.classList.add("active")
-	document.body.classList.add("deletePopupActive")
+  deletePopup.classList.add("active")
+  deletePopupBlock.classList.add("active")
+  document.body.classList.add("deletePopupActive")
 }
 
 const deletePopupAppearanceOff = () => {
-	deletePopupError.style.clipPath = "circle(0 at 50% 50%)"
-	deletePopupSuccess.style.clipPath = "circle(0at 50% 50%)"
-	deletePopupTransitionCircle.style.width = "0"
-	deletePopupTransitionCircle.style.height = "0"
-	deletePopupNotify.classList.remove("delete-active")
-	deletePopupLoader.classList.remove("active")
-	deletePopup.classList.remove("active")
-	deletePopupBlock.classList.remove("active")
-	document.body.classList.remove("deletePopupActive")
+  deletePopupError.style.clipPath = "circle(0 at 50% 50%)"
+  deletePopupSuccess.style.clipPath = "circle(0at 50% 50%)"
+  deletePopupTransitionCircle.style.width = "0"
+  deletePopupTransitionCircle.style.height = "0"
+  deletePopupNotify.classList.remove("delete-active")
+  deletePopupLoader.classList.remove("active")
+  deletePopup.classList.remove("active")
+  deletePopupBlock.classList.remove("active")
+  document.body.classList.remove("deletePopupActive")
 }
 
 const deletePopupFetchResAnimation = (type) => {
-	const tlPromise = new Promise((res, rej) => {
-		deletePopupTransitionCircle.style.width = "1000px"
-		deletePopupTransitionCircle.style.height = "1000px"
-		setTimeout(() => {
-			res()
-		}, 400)
-	})
-	if (type === "success") {
-		tlPromise.then(() => {
-			deletePopupSuccess.style.clipPath = "circle(500px at 50% 50%)"
-		})
-	} else {
-		tlPromise
-			.then(() => {
-				deletePopupError.style.clipPath = "circle(500px at 50% 50%)"
-				setTimeout(() => {}, 800)
-			})
-			.then(() => {
-				deletePopupBg.classList.remove("blocked")
-			})
-	}
+  const tlPromise = new Promise((res, rej) => {
+    deletePopupTransitionCircle.style.width = "1000px"
+    deletePopupTransitionCircle.style.height = "1000px"
+    setTimeout(() => {
+      res()
+    }, 400)
+  })
+  if (type === "success") {
+    tlPromise.then(() => {
+      deletePopupSuccess.style.clipPath = "circle(500px at 50% 50%)"
+    })
+  } else {
+    tlPromise
+      .then(() => {
+        deletePopupError.style.clipPath = "circle(500px at 50% 50%)"
+        setTimeout(() => {}, 800)
+      })
+      .then(() => {
+        deletePopupBg.classList.remove("blocked")
+      })
+  }
 }
 
 const themeToggler = document.querySelector(".theme-toggler");
@@ -109,31 +109,31 @@ themeToggler.addEventListener("click", themeHandler);
 })('https://i.kym-cdn.com/photos/images/original/001/809/460/421.gif');
 
 const deleteFetch = async () => {
-	deletePopupNotify.classList.add("delete-active")
-	deletePopupLoader.classList.add("active")
-	deletePopupBg.classList.add("blocked")
-	// == [ALEX] ==
-	// фетч
-	return fetch(deleteUrl, {
-		method: "POST",
-	})
-		.then((response) => response.json())
-		.then((data) => {
-			window.location.reload()
-			console.log(data.ok)
-			if (data.ok === true) {
-				deletePopupFetchResAnimation("success")
-			} else {
-				window.location.reload()
-				deletePopupFetchResAnimation("error")
-				console.error("server error!")
-			}
-		})
-		.catch(() => {
-			window.location.reload()
-			console.error("local error!")
-			deletePopupFetchResAnimation("error")
-		})
+  deletePopupNotify.classList.add("delete-active")
+  deletePopupLoader.classList.add("active")
+  deletePopupBg.classList.add("blocked")
+  // == [ALEX] ==
+  // фетч
+  return fetch(deleteUrl, {
+    method: "POST",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      window.location.reload()
+      console.log(data.ok)
+      if (data.ok === true) {
+        deletePopupFetchResAnimation("success")
+      } else {
+        window.location.reload()
+        deletePopupFetchResAnimation("error")
+        console.error("server error!")
+      }
+    })
+    .catch(() => {
+      window.location.reload()
+      console.error("local error!")
+      deletePopupFetchResAnimation("error")
+    })
 }
 
 // -- events --

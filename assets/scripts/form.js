@@ -33,230 +33,230 @@ let activeTab = document.querySelector(".tabs-auth__tab.active")
 let currentForm = "reg"
 
 const validateOptions = {
-	nickname: {
-		min: 3,
-		max: 16,
-	},
-	password: {
-		min: 6,
-		max: 16,
-	},
+  nickname: {
+    min: 3,
+    max: 16,
+  },
+  password: {
+    min: 6,
+    max: 16,
+  },
 }
 
 // ===== FUNCTIONS =====
 
 // input check
 function checkInput(input) {
-	if (input.classList.contains("error")) {
-		return false
-	}
-	if (input.value === null || input.value === "") {
-		input.classList.add("error")
-		input.closest(".form__field").querySelector(".form__error").textContent = "Это поле должно быть заполнено"
-		return false
-	}
-	return true
+  if (input.classList.contains("error")) {
+    return false
+  }
+  if (input.value === null || input.value === "") {
+    input.classList.add("error")
+    input.closest(".form__field").querySelector(".form__error").textContent = "Это поле должно быть заполнено"
+    return false
+  }
+  return true
 }
 
 // validation shit
 function nicknameValidate(input, error) {
-	if (input.value === null || input.value === "") {
-		// error.textContent = null
-		input.classList.remove("error")
-	} else if (input.value.indexOf(" ") !== -1) {
-		input.classList.add("error")
-		error.textContent = "В вашем никнейме не должно быть пробелов"
-	} else if (input.value.length < validateOptions.nickname.min) {
-		input.classList.add("error")
-		error.textContent = "Ваш никнейм должен состоять минимум из 3 символов"
-	} else if (input.value.length > validateOptions.nickname.max) {
-		input.classList.add("error")
-		error.textContent = "Ваш никнейм должен состоять максимум из 16 символов"
-	} else {
-		// error.textContent = null
-		input.classList.remove("error")
-	}
+  if (input.value === null || input.value === "") {
+    // error.textContent = null
+    input.classList.remove("error")
+  } else if (input.value.indexOf(" ") !== -1) {
+    input.classList.add("error")
+    error.textContent = "В вашем никнейме не должно быть пробелов"
+  } else if (input.value.length < validateOptions.nickname.min) {
+    input.classList.add("error")
+    error.textContent = "Ваш никнейм должен состоять минимум из 3 символов"
+  } else if (input.value.length > validateOptions.nickname.max) {
+    input.classList.add("error")
+    error.textContent = "Ваш никнейм должен состоять максимум из 16 символов"
+  } else {
+    // error.textContent = null
+    input.classList.remove("error")
+  }
 }
 
 function nicknameEmailValidate(input, error) {
-	if (input.value === null || input.value === "") {
+  if (input.value === null || input.value === "") {
 
-		input.classList.remove("error")
-	} else {
-		// error.textContent = null
-		input.classList.remove("error")
-	}
+    input.classList.remove("error")
+  } else {
+    // error.textContent = null
+    input.classList.remove("error")
+  }
 }
 
 function emailValidate(input, error) {
-	if (input.value === null || input.value === "") {
-		// error.textContent = null
-		input.classList.remove("error")
-	} else if (input.value.indexOf("@") === -1) {
-		error.textContent = "В вашем емайле должен быть данный символ - @"
-		input.classList.add("error")
-	} else {
-		// error.textContent = null
-		input.classList.remove("error")
-	}
+  if (input.value === null || input.value === "") {
+    // error.textContent = null
+    input.classList.remove("error")
+  } else if (input.value.indexOf("@") === -1) {
+    error.textContent = "В вашем емайле должен быть данный символ - @"
+    input.classList.add("error")
+  } else {
+    // error.textContent = null
+    input.classList.remove("error")
+  }
 }
 
 function passwordValidate(input, error) {
-	const passwordVerifyInput = document.querySelector(".form__password-verify .form__input")
-	const passwordVerifyError = document.querySelector(".form__password-verify .form__error")
-	if (input.value === null || input.value === "") {
-		// error.textContent = null
-		input.classList.remove("error")
-	} else if (input.value.indexOf(" ") !== -1) {
-		input.classList.add("error")
-		error.textContent = "В вашем пароле не должно быть пробелов"
-	} else if (input.value.length < validateOptions.password.min) {
-		input.classList.add("error")
-		error.textContent = "Ваш пароль должен состоять минимум из 6 символов"
-	} else if (input.value.length > validateOptions.password.max) {
-		input.classList.add("error")
-		error.textContent = "Ваш пароль должен состоять максимум из 16 символов"
-	} else {
-		// error.textContent = null
-		input.classList.remove("error")
-	}
-	// password verify
-	if ((passwordVerifyInput.value !== null || passwordVerifyInput.value !== "") && passwordVerifyInput.value !== input.value) {
-		passwordVerifyInput.classList.add("error")
-		passwordVerifyError.textContent = "Пароли должны совпадать"
-	} else if (passwordVerifyInput.value === null || passwordVerifyInput.value === "" || passwordVerifyInput.value === input.value) {
-		passwordVerifyInput.classList.remove("error")
-		// passwordVerifyError.textContent = null
-	} else {
-		passwordVerifyInput.classList.remove("error")
-		// passwordVerifyError.textContent = null
-	}
+  const passwordVerifyInput = document.querySelector(".form__password-verify .form__input")
+  const passwordVerifyError = document.querySelector(".form__password-verify .form__error")
+  if (input.value === null || input.value === "") {
+    // error.textContent = null
+    input.classList.remove("error")
+  } else if (input.value.indexOf(" ") !== -1) {
+    input.classList.add("error")
+    error.textContent = "В вашем пароле не должно быть пробелов"
+  } else if (input.value.length < validateOptions.password.min) {
+    input.classList.add("error")
+    error.textContent = "Ваш пароль должен состоять минимум из 6 символов"
+  } else if (input.value.length > validateOptions.password.max) {
+    input.classList.add("error")
+    error.textContent = "Ваш пароль должен состоять максимум из 16 символов"
+  } else {
+    // error.textContent = null
+    input.classList.remove("error")
+  }
+  // password verify
+  if ((passwordVerifyInput.value !== null || passwordVerifyInput.value !== "") && passwordVerifyInput.value !== input.value) {
+    passwordVerifyInput.classList.add("error")
+    passwordVerifyError.textContent = "Пароли должны совпадать"
+  } else if (passwordVerifyInput.value === null || passwordVerifyInput.value === "" || passwordVerifyInput.value === input.value) {
+    passwordVerifyInput.classList.remove("error")
+    // passwordVerifyError.textContent = null
+  } else {
+    passwordVerifyInput.classList.remove("error")
+    // passwordVerifyError.textContent = null
+  }
 }
 
 function passwordVerifyValidate(input, error) {
-	if (input.value === null || input.value === "") {
-		// error.textContent = null
-		input.classList.remove("error")
-	} else if (input.value !== regFormPasswordInput.value) {
-		input.classList.add("error")
-		error.textContent = "Пароли должны совпадать"
-	} else {
-		// error.textContent = null
-		input.classList.remove("error")
-	}
+  if (input.value === null || input.value === "") {
+    // error.textContent = null
+    input.classList.remove("error")
+  } else if (input.value !== regFormPasswordInput.value) {
+    input.classList.add("error")
+    error.textContent = "Пароли должны совпадать"
+  } else {
+    // error.textContent = null
+    input.classList.remove("error")
+  }
 }
 
 // form transition
 function formTransitionAnimate(type) {
-	if (type === "reg") {
-		gsap.to(".main", 0.6, {
-			paddingTop: "150px",
-		})
-		gsap.to(".auth__forms", 0.6, {
-			x: "0%",
-			height: loginForm.offsetHeight,
-			ease: "expo.out",
-		})
-	} else if (type === "login") {
-		gsap.to(".main", 0.6, {
-			paddingTop: "70px",
-		})
-		gsap.to(".auth__forms", 0.6, {
-			x: "-100%",
-			height: regForm.offsetHeight,
-			ease: "expo.out",
-		})
-	} else {
-		console.log("this type doesn't exist!")
-	}
+  if (type === "reg") {
+    gsap.to(".main", 0.6, {
+      paddingTop: "150px",
+    })
+    gsap.to(".auth__forms", 0.6, {
+      x: "0%",
+      height: loginForm.offsetHeight,
+      ease: "expo.out",
+    })
+  } else if (type === "login") {
+    gsap.to(".main", 0.6, {
+      paddingTop: "70px",
+    })
+    gsap.to(".auth__forms", 0.6, {
+      x: "-100%",
+      height: regForm.offsetHeight,
+      ease: "expo.out",
+    })
+  } else {
+    console.log("this type doesn't exist!")
+  }
 }
 
 function passwordStrengthValidate() {
-	const { value } = regFormPasswordInput
+  const { value } = regFormPasswordInput
 
-	// strength checking
-	if (value === null || value === "") {
-		gsap.to(strengthLine, 0.4, {
-			width: "100%",
-			ease: "power2.in",
-		})
-		strengthText.classList.remove("weak")
-		strengthText.classList.remove("strong")
-		strengthText.classList.remove("middle")
-		strengthText.textContent = null
-	} else if (value.length < 10) {
-		gsap.to(strengthLine, 0.4, {
-			width: "70%",
-			ease: "power2.in",
-		})
-		strengthText.classList.add("weak")
-		strengthText.classList.remove("strong")
-		strengthText.classList.remove("middle")
-		strengthText.textContent = "Слабый пароль"
-	} else if (value.length < 12) {
-		gsap.to(strengthLine, 0.4, {
-			width: "50%",
-			ease: "power2.in",
-		})
-		strengthText.classList.remove("weak")
-		strengthText.classList.remove("strong")
-		strengthText.classList.add("middle")
-		strengthText.textContent = "Средний пароль"
-	} else if (value.length <= 16) {
-		gsap.to(strengthLine, 0.4, {
-			width: "0%",
-			ease: "power2.in",
-		})
-		strengthText.classList.remove("weak")
-		strengthText.classList.add("strong")
-		strengthText.classList.remove("middle")
-		strengthText.textContent = "Мощный пароль"
-	}
+  // strength checking
+  if (value === null || value === "") {
+    gsap.to(strengthLine, 0.4, {
+      width: "100%",
+      ease: "power2.in",
+    })
+    strengthText.classList.remove("weak")
+    strengthText.classList.remove("strong")
+    strengthText.classList.remove("middle")
+    strengthText.textContent = null
+  } else if (value.length < 10) {
+    gsap.to(strengthLine, 0.4, {
+      width: "70%",
+      ease: "power2.in",
+    })
+    strengthText.classList.add("weak")
+    strengthText.classList.remove("strong")
+    strengthText.classList.remove("middle")
+    strengthText.textContent = "Слабый пароль"
+  } else if (value.length < 12) {
+    gsap.to(strengthLine, 0.4, {
+      width: "50%",
+      ease: "power2.in",
+    })
+    strengthText.classList.remove("weak")
+    strengthText.classList.remove("strong")
+    strengthText.classList.add("middle")
+    strengthText.textContent = "Средний пароль"
+  } else if (value.length <= 16) {
+    gsap.to(strengthLine, 0.4, {
+      width: "0%",
+      ease: "power2.in",
+    })
+    strengthText.classList.remove("weak")
+    strengthText.classList.add("strong")
+    strengthText.classList.remove("middle")
+    strengthText.textContent = "Мощный пароль"
+  }
 }
 
 // ===== EVENTS =====
 
 // eyes
 passwordEyes.forEach((eye) => {
-	const input = eye.closest(".form__field").querySelector(".form__input")
-	eye.addEventListener("click", () => {
-		eye.classList.toggle("active")
-		if (input.type === "password") {
-			input.type = "text"
-		} else {
-			input.type = "password"
-		}
-	})
+  const input = eye.closest(".form__field").querySelector(".form__input")
+  eye.addEventListener("click", () => {
+    eye.classList.toggle("active")
+    if (input.type === "password") {
+      input.type = "text"
+    } else {
+      input.type = "password"
+    }
+  })
 })
 
 // password strength
 regFormPasswordInput.addEventListener("input", () => {
-	passwordStrengthValidate()
+  passwordStrengthValidate()
 })
 
 // tabs
 tabs.forEach((tab) => {
-	tab.addEventListener("click", () => {
-		tab.classList.toggle("active")
-		activeTab.classList.toggle("active")
-		if (tab !== activeTab) {
-			allInputs.forEach((input) => {
-				const error = input.closest(".form__field").querySelector(".form__error")
-				// input.value = null
-				input.classList.remove("error")
-				// error.textContent = null
-				passwordStrengthValidate()
-			})
-			if (currentForm === "reg") {
-				currentForm = "login"
-				formTransitionAnimate("reg")
-			} else {
-				currentForm = "reg"
-				formTransitionAnimate("login")
-			}
-			activeTab = tab
-		}
-	})
+  tab.addEventListener("click", () => {
+    tab.classList.toggle("active")
+    activeTab.classList.toggle("active")
+    if (tab !== activeTab) {
+      allInputs.forEach((input) => {
+        const error = input.closest(".form__field").querySelector(".form__error")
+        // input.value = null
+        input.classList.remove("error")
+        // error.textContent = null
+        passwordStrengthValidate()
+      })
+      if (currentForm === "reg") {
+        currentForm = "login"
+        formTransitionAnimate("reg")
+      } else {
+        currentForm = "reg"
+        formTransitionAnimate("login")
+      }
+      activeTab = tab
+    }
+  })
 })
 
 const themeToggler = document.querySelector(".theme-toggler");
@@ -265,22 +265,22 @@ const currentTheme = localStorage.getItem("theme");
 
 // inputs verify
 allInputs.forEach((input) => {
-	const field = input.closest(".form__field")
-	const error = field.querySelector(".form__error")
-	const classlist = field.classList
-	input.addEventListener("change", () => {
-		if (classlist.contains("form__nickname")) {
-			nicknameValidate(input, error)
-		} else if (classlist.contains("form__email")) {
-			emailValidate(input, error)
-		} else if (classlist.contains("form__password")) {
-			passwordValidate(input, error)
-		} else if (classlist.contains("form__password-verify")) {
-			passwordVerifyValidate(input, error)
-		} else if (classlist.contains("form__nickname-email")) {
-			nicknameEmailValidate(input, error)
-		}
-	})
+  const field = input.closest(".form__field")
+  const error = field.querySelector(".form__error")
+  const classlist = field.classList
+  input.addEventListener("change", () => {
+    if (classlist.contains("form__nickname")) {
+      nicknameValidate(input, error)
+    } else if (classlist.contains("form__email")) {
+      emailValidate(input, error)
+    } else if (classlist.contains("form__password")) {
+      passwordValidate(input, error)
+    } else if (classlist.contains("form__password-verify")) {
+      passwordVerifyValidate(input, error)
+    } else if (classlist.contains("form__nickname-email")) {
+      nicknameEmailValidate(input, error)
+    }
+  })
 });
 
 if (currentTheme == "dark") {

@@ -55,10 +55,6 @@ const bodyHandler = (event) => {
   }
 };
 
-// navbarMenuLinks.forEach((link) => {
-//   link.addEventListener("click", linkHandler);
-// });
-
 document.body.addEventListener("click", bodyHandler);
 
 window.addEventListener("resize", (event) => {

@@ -24,9 +24,6 @@
   $data2 = json_decode($response, true);
   curl_close($ch);
 
-
-
-
   if ($type == 'movie') {
     $age = $data2['results'][find('RU', $data2['results'], 'iso_3166_1')]['release_dates'][0]['certification'];
   } else {

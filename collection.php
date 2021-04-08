@@ -1,14 +1,14 @@
 <?php 
-    session_start();
+  session_start();
 
-    define("VG_ACCESS", true);
-    require_once "core/settings/server_settings.php";
-    require_once "core/models/db_connect.php";
-    require_once "core/models/functions.php";
+  define("VG_ACCESS", true);
+  require_once "core/settings/server_settings.php";
+  require_once "core/models/db_connect.php";
+  require_once "core/models/functions.php";
 
-    if(isset($_SESSION['user'])) {
-        require_once "core/scripts/compareVer.php";
-    }
+  if(isset($_SESSION['user'])) {
+      require_once "core/scripts/compareVer.php";
+  }
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -23,8 +23,6 @@
     <link rel="shortcut icon" href="assets/static/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/static/favicon-16x16.png" type="image/png">
     <link rel="icon" href="assets/static/favicon-32x32.png" type="image/png">
-    <link rel="icon" href="assets/static/favicon-192x192.png" type="image/png">
-    <link rel="icon" href="assets/static/favicon-512x512.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/static/apple-touch-icon.png" type="image/png">
     <link rel="manifest" href="assets/static/site.webmanifest">
     <title>Коллекция / Pickafilm</title>
@@ -38,23 +36,19 @@
         else require_once "assets/views/navbar_omgthatsjackie/navbar.php"
         ?>
         <div class="content">
-
           <h1 class="title">Ваша коллекция</h1>
           <div class="search">
             <input class="search-input" type="text" placeholder="Введите название">
           </div>
-            <?php
-                if(!isset($_SESSION['user'])){
-                    echo "<div class=\"shown\">Зарегистрируйтесь или войдите, чтобы получить возможность пользоваться коллекцией.</div>";
-                    
-                } else {
-                  if ($_SESSION['user']['likes'] == 0) echo "<div class=\"shown\">Здесь пока пусто...</div>";
-
-                }
-            ?>
-
+          <?php
+            if(!isset($_SESSION['user'])){
+              echo "<div class=\"shown\">Зарегистрируйтесь или войдите, чтобы получить возможность пользоваться коллекцией.</div>";  
+            } else {
+              if ($_SESSION['user']['likes'] == 0) echo "<div class=\"shown\">Здесь пока пусто...</div>";
+            }
+          ?>
           <div class="cards">
-              <?php require_once "core/scripts/echoCollection.php"; ?>
+            <?php require_once "core/scripts/echoCollection.php"; ?>
           </div>
         </div>
       </div>

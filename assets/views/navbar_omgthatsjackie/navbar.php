@@ -1,5 +1,5 @@
 <header class="navbar">
-    <link rel="stylesheet" href="assets/views/navbar_omgthatsjackie/navbar.css">
+  <link rel="stylesheet" href="assets/views/navbar_omgthatsjackie/navbar.css">
   <a class="navbar__logo" href="main">
     <svg width="200" height="28" viewBox="0 0 200 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -7,7 +7,6 @@
         fill="black" />
     </svg>
   </a>
-
   <nav class="navbar-menu">
     <ul class="navbar-menu__list">
       <li class="navbar-menu__item">
@@ -22,12 +21,10 @@
       <span class="navbar-menu__line"></span>
     </ul>
   </nav>
-
   <div class="navbar-user">
     <div tabindex="0" class="navbar-user__avatar">
-      <img src="<?php echo $_SESSION['user']['avatar'];?>" alt="avatar image" />
+      <img src="<?php echo $_SESSION['user']['avatar']; ?>" alt="avatar image" />
     </div>
-
     <div class="navbar-user__menu-wrapper">
       <div class="navbar-user__menu">
         <svg class="navbar-user__svg" width="31" height="27" viewBox="0 0 31 27" fill="none"
@@ -42,7 +39,6 @@
             <rect x="-5" y="25" width="42" height="18" fill="#F5F5F5" />
           </g>
         </svg>
-
         <div class="navbar-user__link-list">
           <a href="main#films" class="navbar-user__link navbar-user__menu-link">Фильмы</a>
           <a href="main#series" class="navbar-user__link navbar-user__menu-link">Сериалы</a>

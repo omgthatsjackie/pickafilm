@@ -13,19 +13,19 @@ const navbarUserMenu = document.querySelector(".navbar-user__menu-wrapper");
 
 
 const navbarMenuLineAnimation = (e) => {
-	// if (e === undefined) return
-	const active = document.querySelector(".navbar-menu__link.active")
-	if (active === null) return
-	const activeWidth = active.offsetWidth
-	const activeLeft = active.offsetLeft
-	// if (e !== null && e.type === "click" && /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-	// }
-	if (e.type === "click") {
-		navbarMenuLine.style.transition = "all 0.3s ease 0s"
-	}
-	navbarMenuLine.style.width = `${activeWidth}px`
-	navbarMenuLine.style.left = `${activeLeft}px`
-	navbarMenuLine.style.opacity = 1
+  // if (e === undefined) return
+  const active = document.querySelector(".navbar-menu__link.active")
+  if (active === null) return
+  const activeWidth = active.offsetWidth
+  const activeLeft = active.offsetLeft
+  // if (e !== null && e.type === "click" && /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+  // }
+  if (e.type === "click") {
+    navbarMenuLine.style.transition = "all 0.3s ease 0s"
+  }
+  navbarMenuLine.style.width = `${activeWidth}px`
+  navbarMenuLine.style.left = `${activeLeft}px`
+  navbarMenuLine.style.opacity = 1
 }
 
 // const navbarMenuHoverLineAnimation = (e) => {
@@ -68,44 +68,44 @@ const navbarMenuLineAnimation = (e) => {
 window.addEventListener("load", navbarMenuLineAnimation)
 
 navbarMenuLinks.forEach((link) => {
-	link.addEventListener("click", (e) => {
-		if (document.querySelector(".navbar-menu__link.active")) {
-			document.querySelector(".navbar-menu__link.active").classList.remove("active")
-		}
-		e.target.classList.add("active")
-		navbarMenuLineAnimation(e)
-	})
+  link.addEventListener("click", (e) => {
+    if (document.querySelector(".navbar-menu__link.active")) {
+      document.querySelector(".navbar-menu__link.active").classList.remove("active")
+    }
+    e.target.classList.add("active")
+    navbarMenuLineAnimation(e)
+  })
 })
 
 window.addEventListener("resize", navbarMenuLineAnimation)
 
 if (navbarBurger) {
-	navbarBurger.addEventListener("click", () => {
-		document.body.classList.add("burger-menu-active")
-		navbarBurgerMenu.classList.add("active")
-	})
-	
-	navbarBurgerBg.addEventListener("click", () => {
-		document.body.classList.remove("burger-menu-active")
-		navbarBurgerMenu.classList.remove("active")
-	})
-	
-	navbarBurgerList.addEventListener("click", (e) => {
-		if (e.target.classList.contains("burger-menu__list")) {
-			document.body.classList.remove("burger-menu-active")
-			navbarBurgerMenu.classList.remove("active")
-		}
-	})
+  navbarBurger.addEventListener("click", () => {
+    document.body.classList.add("burger-menu-active")
+    navbarBurgerMenu.classList.add("active")
+  })
+  
+  navbarBurgerBg.addEventListener("click", () => {
+    document.body.classList.remove("burger-menu-active")
+    navbarBurgerMenu.classList.remove("active")
+  })
+  
+  navbarBurgerList.addEventListener("click", (e) => {
+    if (e.target.classList.contains("burger-menu__list")) {
+      document.body.classList.remove("burger-menu-active")
+      navbarBurgerMenu.classList.remove("active")
+    }
+  })
 }
 
 if (navbarUserAvatar) {
-	navbarUserAvatar.addEventListener("click", (e) => {
-		navbarUserMenu.classList.toggle("active")
-	})
+  navbarUserAvatar.addEventListener("click", (e) => {
+    navbarUserMenu.classList.toggle("active")
+  })
 }
 
 document.body.addEventListener("click", (e) => {
-	if (e.target !== document.querySelector(".navbar-user__avatar img") && navbarUserMenu) {
-		navbarUserMenu.classList.remove("active")
-	}
+  if (e.target !== document.querySelector(".navbar-user__avatar img") && navbarUserMenu) {
+    navbarUserMenu.classList.remove("active")
+  }
 })
