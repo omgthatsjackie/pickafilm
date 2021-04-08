@@ -1,8 +1,5 @@
 <?php
   $key = "11bff7e96c4e8ec266c7fbd8607606ca";
-//  $type = "tv";
-//  $film_id = 1402;
-
   $url = "https://api.themoviedb.org/3/".$type."/".$film_id."?"."api_key=".$key."&language=ru-RU";
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -29,3 +26,5 @@
   } else {
     $age = $data2['results'][find('RU', $data2['results'], 'iso_3166_1')]['rating'];
   }
+
+  if (strlen($age)<2) $age = '?';

@@ -41,9 +41,9 @@
         <div class="main__content container">
           <div class="main__column1 column1">
             <picture class="column1__img">
-              <img src="<?php echo $image?>" alt="Poster">
+              <img src="<?php echo $image ?>" alt="Poster">
             </picture>
-            <?php if(isset($_SESSION['user'])) require_once "assets/views/likeBtn.php";?>
+            <?php if (isset($_SESSION['user'])) require_once "assets/views/likeBtn.php";?>
             <div class="column1__circle-bar circle-bar">
               <svg class="circle-bar__svg">
                 <circle class="circle-bar__bg" cx="50%" cy="50%" r="40%"></circle>
@@ -55,16 +55,16 @@
           <div class="main__column2 column2">
             <h1 class="column2__title">
               <?php
-                if($type=="movie")echo $data['title'];
-                if($type=="tv") echo $data['name'];
+                if ($type=="movie") echo $data['title'];
+                if ($type=="tv") echo $data['name'];
               ?>
             </h1>
             <div class="column2__inf inf">
               <span class="inf__label red"><?php echo $age;?></span>
               <p class="inf__date">
                 <?php
-                  if($type=="movie") $year = preg_split("/[-]+/",$data['release_date']);
-                  if($type=="tv") $year = preg_split("/[-]+/",$data['first_air_date']);
+                  if ($type=="movie") $year = preg_split("/[-]+/",$data['release_date']);
+                  if ($type=="tv") $year = preg_split("/[-]+/",$data['first_air_date']);
                   echo $year[0];
                 ?>
               </p>
@@ -72,8 +72,8 @@
                 <?php
                   $genres_count = count($data['genres']);
                   $genres = "";
-                  for ($i = 0; $i<$genres_count; $i++){
-                    if ($i!=$genres_count-1){
+                  for ($i = 0; $i<$genres_count; $i++) {
+                    if ($i!=$genres_count-1) {
                       $genres.= ($data['genres'][$i]['name'].", ");
                     } else {
                       $genres.=$data['genres'][$i]['name'];
@@ -85,12 +85,12 @@
               </p>
               <p class="inf__time">
                 <?php
-                  if ($type=="movie"){
+                  if ($type=="movie") {
                     echo $data['runtime'];
                     $last_char = $data['runtime']%10;
                     $prelast_char = round(($data['runtime']%100)/10);
-                    if($last_char==1) {echo " минута";}
-                    elseif(($last_char==2 || $last_char==3 ||$last_char==4) AND $prelast_char!=1) {echo " минуты";}
+                    if ($last_char==1) {echo " минута";}
+                    elseif (($last_char==2 || $last_char==3 ||$last_char==4) AND $prelast_char!=1) {echo " минуты";}
                     else echo " минут";
                   }
                 ?>

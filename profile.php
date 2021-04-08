@@ -35,7 +35,7 @@
           <div class="user">
             <div class="user__avatar">
               <picture>
-                <img src="<?php echo $_SESSION['user']['avatar'];?>" />
+                <img src="<?php echo $_SESSION['user']['avatar']; ?>" />
               </picture>
             </div>
             <h1 class="user__nickname">
